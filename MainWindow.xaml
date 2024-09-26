@@ -1,0 +1,102 @@
+﻿<Window x:Class="WpfIPLTicketHub.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfIPLTicketHub"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1000"
+        Background="Black"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Image Source="/Images/IPLTB_01.PNG" 
+               Width="200" Height="200" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top"/>
+        <Image Source="/Images/IPLTB_02.PNG" 
+               Width="686" Height="200" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top" Margin="200,0,0,0"/>
+        <Line X1="0" Y1="100" X2="0" Y2="750" 
+              Stroke="Gray" StrokeThickness="2" 
+              HorizontalAlignment="Center" 
+              VerticalAlignment="Top"/>
+
+        <TextBlock Text="New User?? Register Below" 
+                   Foreground="White" 
+                   FontSize="20" 
+                   Margin="85,137,0,0"
+                   HorizontalAlignment="Left" 
+                   VerticalAlignment="Top"/>
+        <TextBlock Text="Existing User? Sign In" 
+                   Foreground="White" 
+                   FontSize="20" 
+                   Margin="0,137,146,0"
+                   HorizontalAlignment="Right" 
+                   VerticalAlignment="Top"/>
+
+        <!-- User Registration Form -->
+        <Grid Margin="10,183,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="388" Height="317">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Firstname" Foreground="White" FontSize="14" Grid.Row="0" Grid.Column="0" Margin="0,5"/>
+            <TextBox x:Name="FirstNameTextBox" Width="200" Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+            <TextBlock Text="Lastname" Foreground="White" FontSize="14" Grid.Row="1" Grid.Column="0" Margin="0,5"/>
+            <TextBox x:Name="LastNameTextBox" Width="200" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+            <TextBlock Text="Phone no" Foreground="White" FontSize="14" Grid.Row="2" Grid.Column="0" Margin="0,5"/>
+            <TextBox x:Name="PhoneTextBox" Width="200" Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+            <TextBlock Text="Email" Foreground="White" FontSize="14" Grid.Row="3" Grid.Column="0" Margin="0,5"/>
+            <TextBox x:Name="EmailTextBox" Width="200" Grid.Row="3" Grid.Column="1" Margin="5"/>
+
+            <TextBlock Text="Password" Foreground="White" FontSize="14" Grid.Row="4" Grid.Column="0" Margin="0,5"/>
+            <PasswordBox x:Name="PasswordTextBox" Width="200" Grid.Row="4" Grid.Column="1" Margin="5"/>
+
+            <TextBlock Text="Confirm Password" Foreground="White" FontSize="14" Grid.Row="5" Grid.Column="0" Margin="0,5"/>
+            <PasswordBox x:Name="ConfirmPasswordTextBox" Width="200" Grid.Row="5" Grid.Column="1" Margin="5"/>
+
+            <TextBlock Foreground="White" FontSize="14" Grid.Row="6" Grid.Column="0" Margin="0,5"><Run Text="Security Question "/><LineBreak/><Run Text="Fav color+Year of Birth "/><LineBreak/><Run Text="(all small letters)"/></TextBlock>
+            <TextBox x:Name="SecurityQuestionTextBox" Width="200" Grid.Row="6" Grid.Column="1" Margin="22,5,22,47"/>
+
+            <Button Content="Sign Up" Width="94" Margin="0,45,0,-40" Grid.Row="7" HorizontalAlignment="Left" Grid.Column="1" Background="Blue" Foreground="White" Click="SignUpButton_Click"/>
+        </Grid>
+
+        <!-- Existing User Sign-In Form -->
+        <Grid Margin="0,248,60,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="359" Height="176">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Email" Foreground="White" FontSize="14" Grid.Row="0" Grid.Column="0" Margin="0,5"/>
+            <TextBox x:Name="SignInEmailTextBox" Width="200" Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+            <TextBlock Text="Password" Foreground="White" FontSize="14" Grid.Row="1" Grid.Column="0" Margin="0,5"/>
+            <PasswordBox x:Name="SignInPasswordTextBox" Width="200" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+            <Button Content="Sign In" Width="86" Margin="70,21,0,-11" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Click="SignInButton_Click" Background="Blue" Foreground="White"/>
+            <Button Content="Forgot Password? Click here" Width="200" Margin="13,62,0,-52" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Click="ForgotPasswordButton_Click" Background="Blue" Foreground="White"/>
+        </Grid>
+    </Grid>
+</Window>

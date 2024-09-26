@@ -1,0 +1,92 @@
+﻿<Window x:Class="WpfIPLTicketHub.PaymentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfIPLTicketHub"
+        mc:Ignorable="d"
+        Title="Payment" Height="700" Width="1000"
+        Background="Black"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Image Source="/Images/IPLTB_01.PNG" 
+               Width="200" Height="200" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top"/>
+        <Image Source="/Images/IPLTB_02.PNG" 
+               Width="686" Height="200" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top" Margin="200,0,0,0"/>
+        <TextBlock Text="Enter the payment information below" 
+                   FontSize="20" 
+                   Foreground="Blue" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Top" 
+                   Margin="0,150,0,0"/>
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,200,0,0" Height="229">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Card Number -->
+            <TextBlock Text="Card Number:" 
+                       FontSize="18" 
+                       Foreground="White" 
+                       VerticalAlignment="Center" Margin="5"/>
+            <TextBox x:Name="CardNumberTextBox" 
+                     Grid.Column="1" 
+                     Width="200" 
+                     Margin="5"
+                     PreviewTextInput="CardNumberTextBox_PreviewTextInput"
+                     MaxLength="16"/>
+
+            <!-- CVV -->
+            <TextBlock Text="CVV:" 
+                       Grid.Row="1" 
+                       FontSize="18" 
+                       Foreground="White" 
+                       VerticalAlignment="Center" Margin="5"/>
+            <PasswordBox x:Name="CVVTextBox" 
+                         Grid.Row="1" 
+                         Grid.Column="1" 
+                         Width="200" 
+                         Margin="5"
+                         PreviewTextInput="CVVTextBox_PreviewTextInput"
+                         MaxLength="3"/>
+
+            <!-- Expiry Date -->
+            <TextBlock Text="Expiry Date (MM/YY):" 
+                       Grid.Row="2" 
+                       FontSize="18" 
+                       Foreground="White" 
+                       VerticalAlignment="Center" Margin="5"/>
+            <TextBox x:Name="ExpiryDateTextBox" 
+                     Grid.Row="2" 
+                     Grid.Column="1" 
+                     Width="200" 
+                     Margin="5"
+                     PreviewTextInput="ExpiryDateTextBox_PreviewTextInput"
+                     MaxLength="4"/>
+
+            <!-- Pay Now Button -->
+            <Button Content="Pay Now" 
+                    Grid.Row="3" 
+                    Grid.ColumnSpan="2" 
+                    Width="119" 
+                    HorizontalAlignment="Left" 
+                    Margin="130,29,0,-66"
+                    Background="Blue" 
+                    Foreground="White"
+                    Click="PayNowButton_Click"/>
+        </Grid>
+    </Grid>
+</Window>

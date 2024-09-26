@@ -1,0 +1,74 @@
+﻿<Window x:Class="WpfIPLTicketHub.ConfirmationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfIPLTicketHub"
+        mc:Ignorable="d"
+        Title="Cofirmation" Height="700" Width="1000"
+        Background="Black"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Image Source="/Images/IPLTB_01.PNG" 
+               Width="200" Height="200" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top"/>
+        <Image Source="/Images/IPLTB_02.PNG" 
+               Width="686" Height="200" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top" Margin="200,0,0,0"/>
+        <TextBlock Text="Please Confirm the below details and proceed to payment " 
+                   FontSize="20" 
+                   Foreground="Blue" 
+                   HorizontalAlignment="Left" 
+                   VerticalAlignment="Top" 
+                   Margin="138,176,0,0"/>
+        <Image Source="/Images/IPLTB_06.JPG" 
+               Width="742" Height="354" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top" Margin="100,208,0,0"/>
+        <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,208,0,0">
+            <Image Source="/Images/IPLTB_06.JPG" 
+                   Width="742" Height="354"/>
+            <Image Source="/Images/IPLTB_03.JPG" 
+               Width="458" Height="306" 
+               HorizontalAlignment="Right" 
+               VerticalAlignment="Top" Canvas.Left="249" Canvas.Top="46"/>
+            <Image Source="/Images/IPLTB_07.JPG" 
+                   Width="131" Height="116" Canvas.Top="136" Canvas.Left="560"/>
+            <TextBlock Text="Match Details:" 
+                       FontSize="18" 
+                       Foreground="Black" 
+                       Canvas.Left="259" Canvas.Top="107" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBlock x:Name="MatchText"
+                       Text="Match:" 
+                       FontSize="18" 
+                       Foreground="Black" 
+                       Canvas.Left="344" Canvas.Top="153" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="VenueText"
+                       Text="Venue:" 
+                       FontSize="18" 
+                       Foreground="Black" 
+                       Canvas.Left="345" Canvas.Top="182" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="TimeText"
+                       Text="Time:" 
+                       FontSize="18" 
+                       Foreground="Black" 
+                       Canvas.Left="345" Canvas.Top="211" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBlock x:Name="SeatsBookedText"
+                       Text="Seats booked:" 
+                       FontSize="18" 
+                       Foreground="Black" 
+                       Canvas.Left="345" Canvas.Top="240" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Canvas>
+
+        <Button Content="Confirm and Proceed to Payment" 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Bottom" 
+                Margin="0,0,43,114"
+                Background="Blue" 
+                Foreground="White"
+                Click="PaymentScreen_click" Height="39" Width="219"/>
+    </Grid>
+</Window>
